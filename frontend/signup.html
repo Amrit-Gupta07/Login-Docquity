@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Docquity</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    /* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff7e6; /* Light orange background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Container */
+.form-container {
+    background-color: #ffffff;
+    border: 1px solid #ffa500; /* Orange border */
+    border-radius: 8px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Header */
+.form-container h1 {
+    color: #ffa500; /* Orange color */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.form-container label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Input Fields */
+.form-container input, 
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Dropdown Styling */
+.form-container select {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Button */
+.form-container button {
+    width: 100%;
+    background-color: #ffa500; /* Orange color */
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #e69500; /* Darker orange */
+}
+
+/* Error Styling */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+</style>
+<body>
+    <div id="toast" class="toast"></div>
+
+    <div class="form-container">
+        <h1>Register at Docquity</h1>
+        <form id="signup-form">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <div class="error" id="email-error"></div>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Choose a username" required>
+            <div class="error" id="username-error"></div>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <div class="error" id="password-error"></div>
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" required>
+            <div class="error" id="confirm-password-error"></div>
+
+            <label for="country-code">Country Code</label>
+            <select id="country-code" name="country-code" required>
+                <option value="+1">+1 (USA)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+91">+91 (India)</option>
+                <option value="+61">+61 (Australia)</option>
+                <option value="+81">+81 (Japan)</option>
+            </select>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+    <div style="margin-top: 5px;">Already Registered ? <a href="/login">Register</div>
+    
+    
+    
+    <script src="js/signup.js"></script>
+</body>
+</html>

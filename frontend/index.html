@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Docquity</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff7e6; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.form-container {
+    background-color: #ffffff;
+    border: 1px solid #ffa500; 
+    border-radius: 8px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+
+.form-container h1 {
+    color: #ffa500; 
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+.form-container label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+.form-container button {
+    width: 100%;
+    background-color: #ffa500;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #e69500; 
+}
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+</style>
+<body>
+    <div id="toast" class="toast"></div>
+
+    <div class="form-container">
+        <h1>Welcome Back To Docquity</h1>
+        <form id="login-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    
+            <button type="submit">Login</button>
+        </form>
+    
+        
+        <div id="error-message" style="font-size: 14px; margin-top: 10px;"></div>
+        
+    </div>
+    <div style="margin-top: 5px;">Not Registered ? <a href="/signup">Register</div>
+    <script src="./js/login.js"></script>
+</body>
+</html>
